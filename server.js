@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const FRONTEND_URL = process.env.frontend_url || 'http://localhost:5173';
+const FRONTEND_URL = process.env.frontend_url
 
 // Import routes
 const animateRoutes = require('./routes/animate');
@@ -25,8 +25,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-// Serve videos from the public/videos directory
-app.use('/videos', express.static(path.join(__dirname, 'public', 'videos')));
+// Serve videos from the public/outputs directory
+app.use('/outputs', express.static(path.join(__dirname, 'public', 'outputs')));
 
 // Also serve directly from public directory for flexibility
 app.use(express.static(path.join(__dirname, 'public')));

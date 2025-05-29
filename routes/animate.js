@@ -19,7 +19,7 @@ const router = express.Router();
 
 // Get directories from environment or use defaults
 const MANIM_DIR = process.env.MANIM_DIR || path.join(process.cwd(), 'manim_files');
-const OUTPUT_DIR = process.env.OUTPUT_DIR || path.join(process.cwd(), 'public', 'videos');
+const OUTPUT_DIR = process.env.OUTPUT_DIR || path.join(process.cwd(), 'public', 'outputs');
 
 // Create directories if they don't exist
 if (!fs.existsSync(MANIM_DIR)) {
